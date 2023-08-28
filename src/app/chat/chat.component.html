@@ -4,8 +4,15 @@
       {{ message.text }}
     </div>
   </div>
-  <div class="input-container">
+  <div *ngIf="!isLoading" class="input-container">
     <textarea [(ngModel)]="inputText" (keydown.enter)="addUserMessage(inputText)" placeholder="Type your message..." class="form-control"></textarea>
     <button (click)="addUserMessage(inputText)" class="btn btn-primary">Send</button>
+  </div>
+  <div *ngIf="isLoading" class="loading-indicator">
+      <span class="sr-only">Loading...</span>
+
+      
+    <div class="spinner-border" role="status">
+    </div>
   </div>
 </div>

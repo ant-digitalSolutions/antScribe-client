@@ -11,6 +11,7 @@ import { IOpenAiChoice, IOpenAiMessage } from '../dto/openai-choice';
 export class ChatComponent implements OnInit {
   messages: { text: string; sender: 'user' | 'bot' }[] = [];
   inputText = '';
+  isLoading = false;
 
   constructor(private openAiService: OpenAiService) { }
 
@@ -32,9 +33,10 @@ export class ChatComponent implements OnInit {
     const request: ITextCompletionDto = {
       prompt: userMessage
     }
+    this.isLoading = true;
     this.openAiService.generateContentForChat(request)
       .subscribe((message: IOpenAiMessage) => {
-        console.log(message)
+        this.isLoading = false;
         this.addBotMessage(message.content);
       });
   }
