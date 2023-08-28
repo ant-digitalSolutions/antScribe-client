@@ -1,0 +1,41 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.messages {
+  margin-bottom: 20px;
+}
+
+.user-message {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.bot-message {
+  background-color: #d4edf7;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  margin-left: 10px;
+}
